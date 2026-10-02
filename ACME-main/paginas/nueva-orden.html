@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ACME - Nueva orden</title>
+
+  <link rel="stylesheet" href="../css/estilos.css">
+</head>
+
+<body>
+
+  <!-- ENCABEZADO Y MENÚ PRINCIPAL -->
+
+  <header class="main-header">
+
+<a href="inicio.html" class="header-logo">
+  <img src="../img/logo-acme.png" alt="Logo de Comercializadora ACME S.A.S.">
+</a>
+
+    <button class="menu-toggle" aria-label="Abrir menú">
+      ☰
+    </button>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="clientes.html">Clientes</a></li>
+        <li><a href="proveedores.html">Proveedores</a></li>
+        <li><a href="ordenes.html">Órdenes</a></li>
+        <li><a href="ventas.html">Ventas</a></li>
+        <li><a href="compras.html">Compras</a></li>
+        <li><a href="reportes.html">Reportes</a></li>
+        <li><a href="../index.html">Cerrar sesión</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+
+  <!-- CONTENIDO PRINCIPAL -->
+
+  <main class="page-container">
+
+    <section>
+
+      <h2>Formulario nueva orden de trabajo</h2>
+
+      <div class="form-container">
+
+        <form id="form-orden" novalidate>
+
+          <!-- CLIENTE -->
+
+          <div class="form-group">
+
+            <label for="cliente">Cliente</label>
+
+            <input
+              type="text"
+              id="cliente"
+              name="cliente"
+              placeholder="Ingrese el cliente">
+            <span class="field-error" id="error-cliente"></span>
+
+          </div>
+
+
+          <!-- RESPONSABLE -->
+
+          <div class="form-group">
+
+            <label for="responsable">Responsable</label>
+
+            <input
+              type="text"
+              id="responsable"
+              name="responsable"
+              placeholder="Ingrese el responsable">
+            <span class="field-error" id="error-responsable"></span>
+
+          </div>
+
+
+          <!-- MÉTODO DE PAGO -->
+
+          <div class="form-group">
+
+            <label for="metodo">Método de pago</label>
+
+            <select id="metodo" name="metodo">
+
+              <option value="">Seleccione un método de pago</option>
+              <option value="efectivo">Efectivo</option>
+              <option value="tarjeta">Tarjeta</option>
+              <option value="transferencia">Transferencia</option>
+
+            </select>
+            <span class="field-error" id="error-metodo"></span>
+
+          </div>
+
+
+          <!-- ESTADO -->
+
+          <div class="form-group">
+
+            <label for="estado">Estado de la orden</label>
+
+            <select id="estado" name="estado">
+
+              <option value="">Seleccione el estado</option>
+              <option value="proceso">En proceso</option>
+              <option value="terminada">Terminada</option>
+
+            </select>
+            <span class="field-error" id="error-estado"></span>
+
+          </div>
+
+
+          <!-- PRODUCTO -->
+
+          <div class="form-group">
+
+            <label for="producto">Producto</label>
+
+            <input
+              type="text"
+              id="producto"
+              name="producto"
+              placeholder="Ingrese el producto">
+            <span class="field-error" id="error-producto"></span>
+
+          </div>
+
+
+          <!-- VALOR UNITARIO -->
+
+          <div class="form-group">
+
+            <label for="valor">Valor unitario</label>
+
+            <input
+              type="number"
+              id="valor"
+              name="valor"
+              min="0"
+              step="0.01"
+              placeholder="0.00">
+            <span class="field-error" id="error-valor"></span>
+
+          </div>
+
+
+          <!-- CANTIDAD -->
+
+          <div class="form-group">
+
+            <label for="cantidad">Cantidad</label>
+
+            <input
+              type="number"
+              id="cantidad"
+              name="cantidad"
+              min="1"
+              placeholder="Ingrese la cantidad">
+            <span class="field-error" id="error-cantidad"></span>
+
+          </div>
+
+
+          <!-- TOTAL (se calcula solo) -->
+
+          <div class="form-group">
+
+            <label for="total">Total de venta</label>
+
+            <input
+              type="number"
+              id="total"
+              name="total"
+              min="0"
+              step="0.01"
+              placeholder="0.00">
+            <small class="ayuda-campo">Se calcula automáticamente (valor unitario × cantidad).</small>
+            <span class="field-error" id="error-total"></span>
+
+          </div>
+
+
+          <!-- BOTONES -->
+
+          <div class="form-row">
+
+            <button type="submit" class="btn-primary">
+              Generar orden
+            </button>
+
+            <a href="ordenes.html" class="btn-secondary btn-cancelar">
+              Cancelar
+            </a>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FUNCIONALIDAD DEL MENÚ RESPONSIVO -->
+
+  <script>
+
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.main-nav');
+
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+  </script>
+
+  <!-- MÓDULO DE DATOS (localStorage) Y LÓGICA DE ESTE FORMULARIO -->
+  <script src="../js/storage.js"></script>
+  <script src="../js/utilidades.js"></script>
+  <script src="../js/orden-form.js"></script>
+
+</body>
+
+</html>
+

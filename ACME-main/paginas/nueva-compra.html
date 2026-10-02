@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACME - Nueva compra</title>
+  <link rel="stylesheet" href="../css/estilos.css">
+</head>
+
+<body>
+
+  <header class="main-header">
+
+<a href="inicio.html" class="header-logo">
+  <img src="../img/logo-acme.png" alt="Logo de Comercializadora ACME S.A.S.">
+</a>
+
+    <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="clientes.html">Clientes</a></li>
+        <li><a href="proveedores.html">Proveedores</a></li>
+        <li><a href="ordenes.html">Órdenes</a></li>
+        <li><a href="ventas.html">Ventas</a></li>
+        <li><a href="compras.html">Compras</a></li>
+        <li><a href="reportes.html">Reportes</a></li>
+        <li><a href="../index.html">Cerrar sesión</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <main class="page-container">
+
+    <section>
+
+      <h2>Formulario nueva compra</h2>
+
+      <div class="form-container">
+
+        <form id="form-compra" novalidate>
+
+          <div class="form-row">
+
+            <div class="form-group">
+              <label for="proveedor">Proveedor</label>
+              <input
+                type="text"
+                id="proveedor"
+                name="proveedor"
+                placeholder="Ingrese el proveedor"
+              >
+              <span class="field-error" id="error-proveedor"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="fecha">Fecha</label>
+              <input
+                type="date"
+                id="fecha"
+                name="fecha"
+              >
+              <span class="field-error" id="error-fecha"></span>
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <label for="producto">Producto</label>
+            <input
+              type="text"
+              id="producto"
+              name="producto"
+              placeholder="Ingrese el producto"
+            >
+            <span class="field-error" id="error-producto"></span>
+          </div>
+
+          <div class="form-row">
+
+            <div class="form-group">
+              <label for="valor">Valor unitario</label>
+              <input
+                type="number"
+                id="valor"
+                name="valor"
+                min="0"
+                step="0.01"
+                placeholder="0.00"
+              >
+              <span class="field-error" id="error-valor"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="cantidad">Cantidad</label>
+              <input
+                type="number"
+                id="cantidad"
+                name="cantidad"
+                min="1"
+                placeholder="1"
+              >
+              <span class="field-error" id="error-cantidad"></span>
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <label for="total">Total de compra</label>
+            <input
+              type="number"
+              id="total"
+              name="total"
+              min="0"
+              step="0.01"
+              placeholder="0.00"
+            >
+            <small class="ayuda-campo">Se calcula automáticamente (valor unitario × cantidad).</small>
+            <span class="field-error" id="error-total"></span>
+          </div>
+
+          <div class="form-row">
+
+            <button type="submit" class="btn-primary">
+              Registrar compra
+            </button>
+
+            <a href="compras.html" class="btn-secondary btn-cancelar">
+              Cancelar
+            </a>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.main-nav');
+
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  </script>
+
+  <!-- MÓDULO DE DATOS (localStorage) Y LÓGICA DE ESTE FORMULARIO -->
+  <script src="../js/storage.js"></script>
+  <script src="../js/utilidades.js"></script>
+  <script src="../js/compra-form.js"></script>
+
+</body>
+</html>
+

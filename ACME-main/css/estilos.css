@@ -1,0 +1,807 @@
+/* CONFIGURACIÓN GENERAL */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333333;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* LOGIN */
+
+.login-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+/* SECCIÓN DEL LOGO */
+
+.login-logo {
+  width: 50%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1f4e79;
+}
+
+.logo-acme {
+  width: 250px;
+  max-width: 70%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* SECCIÓN DEL FORMULARIO */
+
+.login-box {
+  width: 50%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+  background-color: #ffffff;
+}
+
+/* TÍTULOS */
+
+.login-box h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 40px;
+}
+
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 40px; 
+  font-size: 24px;
+}
+
+/* CAMPOS */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+/* BOTONES */
+
+button {
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+}
+
+.login-box button,
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1f4e79;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.login-box button:hover,
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+
+/* HEADER Y NAVEGACIÓN */
+
+/* LOGO DEL ENCABEZADO */
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.header-logo img {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.main-header {
+  width: 100%;
+  background-color: #1f4e79;
+  color: #ffffff;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.main-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 28px;
+}
+
+
+
+/* CONTENIDO GENERAL */
+
+main {
+  width: 100%;
+}
+
+.dashboard,
+.page-container {
+  width: 100%;
+  padding: 30px;
+}
+
+.page-container h2,
+.dashboard h2 {
+  margin-bottom: 25px;
+}
+
+.page-container section {
+  margin-bottom: 30px;
+}
+
+
+/* TARJETAS DEL DASHBOARD */
+
+.info-general .cards {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  min-width: 180px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card span {
+  display: block;
+  margin-top: 10px;
+  color: #1f4e79;
+  font-size: 24px;
+}
+
+
+/* TABLAS */
+
+.table-container {
+  width: 100%;
+  overflow-x: auto; /* Permite el desplazamiento horizontal */
+  margin-bottom: 30px;
+}
+
+table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  border: 1px solid #cccccc;
+  padding: 10px;
+  text-align: center;
+}
+
+table th {
+  background-color: #1f4e79;
+  color: #ffffff;
+}
+
+table tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+
+/* FORMULARIOS GENERALES */
+
+.form-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+/* TARJETAS DEL DASHBOARD */
+
+.info-general .cards {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  min-width: 180px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card span {
+  display: block;
+  margin-top: 10px;
+  color: #1f4e79;
+  font-size: 24px;
+}
+
+
+/* TABLAS */
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 30px;
+}
+
+table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  border: 1px solid #cccccc;
+  padding: 10px;
+  text-align: center;
+}
+
+table th {
+  background-color: #1f4e79;
+  color: #ffffff;
+}
+
+table tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+
+/* FORMULARIOS GENERALES */
+
+.form-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+
+
+/* BOTONES GENERALES */
+
+.btn-secondary {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #666666;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.btn-danger {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #b22222;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.btn-secondary:hover,
+.btn-danger:hover {
+  opacity: 0.9;
+}
+
+/* Para que el "Cancelar" (ahora un <a>, no un <button>) se vea idéntico
+   al resto de botones aunque sea un enlace */
+.btn-cancelar {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+
+
+/* VALIDACIÓN DE FORMULARIOS (JavaScript) */
+
+.field-error {
+  display: block;
+  min-height: 18px; /* reserva el espacio para que el formulario no "salte" */
+  margin-top: 6px;
+  color: #b22222;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.input-invalido {
+  border-color: #b22222 !important;
+  background-color: #fdf2f2;
+}
+
+.ayuda-campo {
+  display: block;
+  margin-top: 6px;
+  color: #666666;
+  font-size: 13px;
+}
+
+
+/* BUSCADOR DE TABLAS (Productos, y en adelante Clientes/Proveedores/etc.) */
+
+.buscador-group {
+  max-width: 400px;
+  margin-bottom: 0;
+}
+
+.buscador-group input[type="search"] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 15px;
+  font-family: Arial, sans-serif;
+}
+
+
+/* ACCIONES SOBRE LAS FILAS (íconos de Editar / Eliminar) */
+/* -----------------------------------------------------------------------
+   Ya no existe una columna "Acciones". En su lugar, la celda de
+   "Disponible" de cada fila lleva una pastilla flotante (position:
+   absolute) con los íconos, oculta por defecto y que aparece encima del
+   número al pasar el cursor sobre la fila.
+   ----------------------------------------------------------------------- */
+
+.celda-flotante {
+  position: relative; /* la pastilla se posiciona con respecto a esta celda */
+}
+
+.icono-flotante-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  transform: translateY(-50%) scale(0.9);
+
+  padding: 4px 8px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+}
+
+/* Al pasar el cursor sobre CUALQUIER parte de la fila aparece la pastilla */
+table tbody tr:hover .icono-flotante-wrap {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) scale(1);
+}
+
+.icono-accion {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.15s ease;
+}
+
+.icono-accion svg {
+  width: 16px;
+  height: 16px;
+}
+
+.icono-editar {
+  color: #1f4e79;
+}
+
+.icono-editar:hover {
+  background-color: #e3ecf4;
+}
+
+.icono-eliminar {
+  color: #b22222;
+}
+
+.icono-eliminar:hover {
+  background-color: #fbe6e6;
+}
+
+/* En pantallas táctiles (celular/tablet) no existe el "hover", así que
+   ahí dejamos la pastilla siempre visible para no esconder la acción. */
+@media (hover: none) {
+  .icono-flotante-wrap {
+    opacity: 1;
+    visibility: visible;
+    position: static;
+    transform: none;
+    box-shadow: none;
+    background-color: transparent;
+    justify-content: center;
+    margin-top: 6px;
+  }
+}
+
+/* Resalta en la tabla los productos con existencias en o por debajo
+   del mínimo definido, para que salten a la vista */
+.fila-stock-bajo td {
+  background-color: #fdeaea;
+}
+
+
+/* CELULAR Hasta 480px*/
+
+@media (max-width: 480px) {
+
+  /* LOGIN */
+
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-logo {
+    width: 100%;
+    min-height: 35vh;
+    padding: 25px;
+  }
+
+  .login-box {
+    width: 100%;
+    min-height: 65vh;
+    padding: 30px 25px;
+  }
+
+  .logo-acme {
+    width: 150px;
+    max-width: 70%;
+  }
+
+  .login-box h1 {
+    font-size: 30px;
+  }
+
+  .login-box h2 {
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+
+  .form-group {
+    margin-bottom: 18px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .login-box button,
+  .btn-primary {
+    padding: 12px;
+    font-size: 15px;
+  }
+
+
+  /* HEADER */
+
+  .header-logo img {
+  width: 45px;
+  height: 45px;
+}
+
+  .main-header {
+    padding: 15px 20px;
+  }
+
+  .main-header h1 {
+    font-size: 18px;
+  }
+
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    background-color: #1f4e79;
+    border-radius: 0 0 0 8px;
+    z-index: 10;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 10px;
+  }
+
+  .main-nav a {
+    display: block;
+    padding: 12px 10px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .main-nav.active { /* conexion con el menu resposivo */
+    display: block;
+  }
+
+
+  /* CONTENIDO */
+
+  .dashboard,
+  .page-container {
+    padding: 20px;
+  }
+
+  .info-general .cards {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .card {
+    width: 100%;
+    min-width: 0;
+  }
+
+
+  /* FORMULARIOS */
+
+  .form-container {
+    padding: 20px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  table {
+    min-width: 650px;
+  }
+}
+
+
+/* TABLET 481px - 768px */
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+  /* LOGIN */
+
+  .login-logo {
+    width: 40%;
+  }
+
+  .login-box {
+    width: 60%;
+    padding: 40px;
+  }
+
+  .logo-acme {
+    width: 180px;
+    max-width: 80%;
+  }
+
+  .login-box h1 {
+    font-size: 32px;
+  }
+
+  .login-box h2 {
+    font-size: 21px;
+    margin-bottom: 30px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .login-box button,
+  .btn-primary {
+    padding: 12px;
+    font-size: 15px;
+  }
+
+
+  /* HEADER */
+  
+  .header-logo img {
+  width: 50px;
+  height: 50px;
+}
+
+  .main-header {
+    padding: 15px 25px;
+  }
+
+  .main-header h1 {
+    font-size: 20px;
+  }
+
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 220px;
+    background-color: #1f4e79;
+    border-radius: 0 0 0 8px;
+    z-index: 10;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 10px;
+  }
+
+  .main-nav a {
+    display: block;
+    padding: 12px 10px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .main-nav.active {
+    display: block;
+  }
+
+
+  /* CONTENIDO */
+
+  .dashboard,
+  .page-container {
+    padding: 25px;
+  }
+
+  .info-general .cards {
+    gap: 15px;
+  }
+
+  .card {
+    min-width: 200px;
+  }
+
+
+  /* FORMULARIOS */
+
+  .form-container {
+    padding: 25px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  table {
+    min-width: 650px;
+  }
+}
+
+
+/* PC Desde 769px */
+
+@media (min-width: 769px) {
+
+  .main-nav {
+    display: block;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .form-container {
+    max-width: 800px;
+  }
+}

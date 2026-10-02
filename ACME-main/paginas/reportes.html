@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACME - Reportes</title>
+  <link rel="stylesheet" href="../css/estilos.css">
+</head>
+
+<body>
+
+  <header class="main-header">
+
+<a href="inicio.html" class="header-logo">
+  <img src="../img/logo-acme.png" alt="Logo de Comercializadora ACME S.A.S.">
+</a>
+
+    <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="clientes.html">Clientes</a></li>
+        <li><a href="proveedores.html">Proveedores</a></li>
+        <li><a href="ordenes.html">Órdenes</a></li>
+        <li><a href="ventas.html">Ventas</a></li>
+        <li><a href="compras.html">Compras</a></li>
+        <li><a href="reportes.html">Reportes</a></li>
+        <li><a href="../index.html">Cerrar sesión</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <main class="page-container">
+
+    <section>
+
+      <h2>Reportes generales</h2>
+
+      <div class="info-general">
+
+        <div class="cards">
+
+          <article class="card">
+            Total productos vendidos
+            <span id="tarjeta-vendidos">0</span>
+          </article>
+
+          <article class="card">
+            Total compras realizadas
+            <span id="tarjeta-comprados">0</span>
+          </article>
+
+          <article class="card">
+            Clientes activos
+            <span id="tarjeta-clientes">0</span>
+          </article>
+
+          <article class="card">
+            Proveedores activos
+            <span id="tarjeta-proveedores">0</span>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FILTRO POR RANGO DE FECHAS -->
+    <!-- Se aplica a Ventas y Compras (sí tienen fecha) y recalcula las
+         4 tarjetas de arriba. Las Órdenes no manejan fecha, por eso su
+         tabla más abajo no cambia con este filtro. -->
+
+    <section>
+
+      <h2>Filtrar por fecha</h2>
+
+      <div class="form-row">
+
+        <div class="form-group">
+          <label for="filtro-fecha-inicio">Fecha inicio</label>
+          <input type="date" id="filtro-fecha-inicio">
+        </div>
+
+        <div class="form-group">
+          <label for="filtro-fecha-fin">Fecha fin</label>
+          <input type="date" id="filtro-fecha-fin">
+        </div>
+
+        <div class="form-group">
+          <label>&nbsp;</label>
+          <button type="button" id="btn-limpiar-filtro" class="btn-secondary">
+            Limpiar filtro
+          </button>
+        </div>
+
+      </div>
+
+      <span class="field-error" id="error-filtro-fecha"></span>
+
+    </section>
+
+
+    <section>
+
+      <h2>Resumen de ventas</h2>
+
+      <div class="table-container">
+
+        <table id="tabla-resumen-ventas">
+
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Cliente</th>
+              <th>Producto</th>
+              <th>Cantidad</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <!-- Filas generadas por JavaScript (js/reportes.js) -->
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+
+    <section>
+
+      <h2>Resumen de compras</h2>
+
+      <div class="table-container">
+
+        <table id="tabla-resumen-compras">
+
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Proveedor</th>
+              <th>Producto</th>
+              <th>Cantidad</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <!-- Filas generadas por JavaScript (js/reportes.js) -->
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+
+    <section>
+
+      <h2>Resumen de órdenes de trabajo</h2>
+
+      <div class="table-container">
+
+        <table id="tabla-resumen-ordenes">
+
+          <thead>
+            <tr>
+              <th>Cliente</th>
+              <th>Responsable</th>
+              <th>Método de pago</th>
+              <th>Valor total</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <!-- Filas generadas por JavaScript (js/reportes.js) -->
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.main-nav');
+
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  </script>
+
+  <!-- MÓDULO DE DATOS (localStorage) Y LÓGICA DE ESTA PÁGINA -->
+  <script src="../js/storage.js"></script>
+  <script src="../js/utilidades.js"></script>
+  <script src="../js/reportes.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ACME - Productos</title>
+
+  <link rel="stylesheet" href="../css/estilos.css">
+</head>
+
+<body>
+
+  <!-- ENCABEZADO Y MENÚ PRINCIPAL -->
+
+  <header class="main-header">
+
+<a href="inicio.html" class="header-logo">
+  <img src="../img/logo-acme.png" alt="Logo de Comercializadora ACME S.A.S.">
+</a>
+
+    <button class="menu-toggle" aria-label="Abrir menú">
+      ☰
+    </button>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="clientes.html">Clientes</a></li>
+        <li><a href="proveedores.html">Proveedores</a></li>
+        <li><a href="ordenes.html">Órdenes</a></li>
+        <li><a href="ventas.html">Ventas</a></li>
+        <li><a href="compras.html">Compras</a></li>
+        <li><a href="reportes.html">Reportes</a></li>
+        <li><a href="../index.html">Cerrar sesión</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+
+<!--contenido principal -->
+  <main class="page-container">
+
+    <section>
+
+      <h2>Inventario de productos</h2>
+      <p>
+        <a href="nuevo-producto.html" class="btn-primary">
+          Nuevo producto
+        </a>
+      </p>
+
+    </section>
+
+
+    <!-- BUSCADOR: filtra la tabla en tiempo real por código o nombre -->
+
+    <section>
+
+      <div class="form-group buscador-group">
+        <label for="buscador-productos">Buscar producto</label>
+        <input
+          type="search"
+          id="buscador-productos"
+          placeholder="Buscar por código o nombre...">
+      </div>
+
+    </section>
+
+
+    <!-- TABLA DE INVENTARIO -->
+    <!-- El <tbody> se llena dinámicamente desde js/productos.js -->
+    <!-- (lee y escribe en localStorage), por eso ya no tiene filas fijas. -->
+
+    <section>
+
+      <div class="table-container">
+
+        <table id="tabla-productos">
+
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Producto</th>
+              <th>Disponible</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <!-- Filas generadas por JavaScript -->
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FUNCIONALIDAD DEL MENÚ RESPONSIVO -->
+
+  <script>
+
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.main-nav');
+
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+  </script>
+
+  <!-- MÓDULO DE DATOS (localStorage) Y LÓGICA DE ESTA PÁGINA -->
+  <script src="../js/storage.js"></script>
+  <script src="../js/utilidades.js"></script>
+  <script src="../js/productos.js"></script>
+
+</body>
+
+</html>
+

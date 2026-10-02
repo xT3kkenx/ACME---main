@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ACME - Órdenes</title>
+
+  <link rel="stylesheet" href="../css/estilos.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       ENCABEZADO Y MENÚ PRINCIPAL
+       ===================================================== -->
+
+  <header class="main-header">
+
+<a href="inicio.html" class="header-logo">
+  <img src="../img/logo-acme.png" alt="Logo de Comercializadora ACME S.A.S.">
+</a>
+
+    <button class="menu-toggle" aria-label="Abrir menú">
+      ☰
+    </button>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="clientes.html">Clientes</a></li>
+        <li><a href="proveedores.html">Proveedores</a></li>
+        <li><a href="ordenes.html">Órdenes</a></li>
+        <li><a href="ventas.html">Ventas</a></li>
+        <li><a href="compras.html">Compras</a></li>
+        <li><a href="reportes.html">Reportes</a></li>
+        <li><a href="../index.html">Cerrar sesión</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+
+  <!-- =====================================================
+       CONTENIDO PRINCIPAL
+       ===================================================== -->
+
+  <main class="page-container">
+
+    <section>
+
+      <h2>Lista de órdenes de trabajo</h2>
+
+      <!-- BOTÓN NUEVA ORDEN -->
+
+      <p>
+        <a href="nueva-orden.html" class="btn-primary">
+          Nueva orden
+        </a>
+      </p>
+
+    </section>
+
+
+    <!-- BUSCADOR: filtra la tabla en tiempo real por cliente o responsable -->
+
+    <section>
+
+      <div class="form-group buscador-group">
+        <label for="buscador-ordenes">Buscar orden</label>
+        <input
+          type="search"
+          id="buscador-ordenes"
+          placeholder="Buscar por cliente o responsable...">
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         TABLA DE ÓRDENES
+         El <tbody> se llena dinámicamente desde js/ordenes.js
+         ================================================= -->
+
+    <section>
+
+      <div class="table-container">
+
+        <table id="tabla-ordenes">
+
+          <thead>
+            <tr>
+              <th>Cliente</th>
+              <th>Responsable</th>
+              <th>Método de pago</th>
+              <th>Valor total</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <!-- Filas generadas por JavaScript -->
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       FUNCIONALIDAD DEL MENÚ RESPONSIVO
+       ===================================================== -->
+
+  <script>
+
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.main-nav');
+
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+  </script>
+
+  <!-- MÓDULO DE DATOS (localStorage) Y LÓGICA DE ESTA PÁGINA -->
+  <script src="../js/storage.js"></script>
+  <script src="../js/utilidades.js"></script>
+  <script src="../js/ordenes.js"></script>
+
+</body>
+
+</html>

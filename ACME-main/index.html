@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACME - Inicio de sesión</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <main class="login-container"> <!--contenido principal de la pagina -->
+    <section class="login-logo">
+      <img src="img/logo-acme.png" alt="Logo de ACME" class="logo-acme">
+    </section>
+
+    <section class="login-box">
+      <h1>ACME</h1>
+      <h2>Inicio de sesión</h2>
+      <form action="paginas/inicio.html" method="get">
+        <div class="form-group">
+          <label for="usuario">Usuario</label>
+          <input type="text" id="usuario" name="usuario" placeholder="Ingrese su usuario" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" name="password" placeholder="Ingrese su contraseña" required>
+        </div>
+        <button type="submit">Ingresar</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACME - Ventas</title>
+  <link rel="stylesheet" href="../css/estilos.css">
+</head>
+
+<body>
+
+  <header class="main-header">
+
+<a href="inicio.html" class="header-logo">
+  <img src="../img/logo-acme.png" alt="Logo de Comercializadora ACME S.A.S.">
+</a>
+
+    <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="clientes.html">Clientes</a></li>
+        <li><a href="proveedores.html">Proveedores</a></li>
+        <li><a href="ordenes.html">Órdenes</a></li>
+        <li><a href="ventas.html">Ventas</a></li>
+        <li><a href="compras.html">Compras</a></li>
+        <li><a href="reportes.html">Reportes</a></li>
+        <li><a href="../index.html">Cerrar sesión</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <main class="page-container">
+
+    <section>
+      <h2>Lista de ventas</h2>
+
+      <a href="nueva-venta.html" class="btn-primary">Nueva venta</a>
+     </section>
+
+     <!-- BUSCADOR: filtra la tabla en tiempo real por cliente o producto -->
+     <section>
+      <div class="form-group buscador-group">
+        <label for="buscador-ventas">Buscar venta</label>
+        <input
+          type="search"
+          id="buscador-ventas"
+          placeholder="Buscar por cliente o producto...">
+      </div>
+     </section>
+
+     <!-- El <tbody> se llena dinámicamente desde js/ventas.js -->
+     <section>
+      <div class="table-container">
+
+        <table id="tabla-ventas">
+          <thead>
+            <tr>
+              <th>Cliente</th>
+              <th>Cantidad</th>
+              <th>Valor total</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <!-- Filas generadas por JavaScript -->
+          </tbody>
+        </table>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.main-nav');
+
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  </script>
+
+  <!-- MÓDULO DE DATOS (localStorage) Y LÓGICA DE ESTA PÁGINA -->
+  <script src="../js/storage.js"></script>
+  <script src="../js/utilidades.js"></script>
+  <script src="../js/ventas.js"></script>
+
+</body>
+</html>
+
